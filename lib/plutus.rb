@@ -4,6 +4,8 @@ require "rails"
 module Plutus
   class Engine < Rails::Engine
     isolate_namespace Plutus
+    # Thanks: https://github.com/kaminari/kaminari/issues/213#issuecomment-117528596
+    require "kaminari"
   end
 
 

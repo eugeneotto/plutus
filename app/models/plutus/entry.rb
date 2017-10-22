@@ -56,6 +56,14 @@ module Plutus
       super
     end
 
+    def description_parsed
+      @description_parsed ||= begin
+        JSON.parse(self.description)
+      rescue JSON::ParserError
+        self.description
+      end
+    end
+
     private
       def default_date
         todays_date = ActiveRecord::Base.default_timezone == :utc ? Time.now.utc : Time.now

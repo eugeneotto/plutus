@@ -1,0 +1,9 @@
+<% if description.is_a?(Hash) %>
+  <ul style="padding:0;margin:0;list-style:none;">
+    <% description.each do |key, val| %>
+      <li><strong><%=h key %>:</strong> <%=h val %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%=h description %>
+<% end %>

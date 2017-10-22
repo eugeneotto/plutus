@@ -23,7 +23,7 @@
   <tbody>
   <% @entries.each do |entry| %>
     <tr class="<%= cycle("even", "odd") -%>">
-      <td><%=h entry.description %></td>
+      <td><%= render partial: 'entry_description', locals: { description: entry.description_parsed } %></td>
       <td></td>
       <td></td>
       <td><%=h entry.created_at %></td>
